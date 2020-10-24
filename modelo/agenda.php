@@ -1,6 +1,6 @@
 <?php 
   
-   include_once 'config/Conexion.php';
+   require 'Conexion.php';
   
   class Agenda{
       protected $nombre;

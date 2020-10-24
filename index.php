@@ -17,8 +17,8 @@ $accion = 'insert';
  	<meta charset="utf-8">
  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
  	<title>Mi agenda</title>
- 	<link rel="stylesheet" type="text/css" href="css/styles.css">
- 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+ 	<link rel="stylesheet" type="text/css" href="vista/css/styles.css">
+ 	<link rel="stylesheet" type="text/css" href="vista/css/fonts.css">
  	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
  	</head>
@@ -38,7 +38,7 @@ $accion = 'insert';
 	 	 <input type="submit" name="submit" value="Enviar">
 	     </form>
 
-       <?php include 'tabla.php'; ?>
+       <?php include 'vista/modulos/tabla.php'; ?>
        <footer> David717@hotmail.es</footer>
  	
  </body>
