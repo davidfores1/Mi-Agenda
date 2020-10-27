@@ -1,5 +1,5 @@
 <?php 
-       include 'modelo/agenda.php';
+       require '../modelo/agenda.php';
 
 
    if(isset($_POST['submit'])){
@@ -13,14 +13,7 @@
        $agenda = new Agenda($nom,$dom,$tel,$com);
        $agenda->insert();
        
-       }
-            // echo '<pre>';
-       // var_dump($nom);
-       //  var_dump($dom);
-       //  var_dump($tel);
-       //  var_dump($com);
-       //  echo '</pre>';
-       
+       }  
 
 
    	   if($_POST['accion']=='update'){
@@ -40,4 +33,3 @@
        }
    
 
- ?>

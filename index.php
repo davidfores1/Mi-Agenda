@@ -25,7 +25,7 @@ $accion = 'insert';
 
  <body>
  	<header><a href="index.php"><h1>Mi Agenda</h1></a></header>
-     <form action="post.php" method="post">
+     <form action="controlador/controlador.php" method="post">
      	<div class="icon-user-plus"></div>
                 	
 	     <input type="text" name="nombre" value="<?php echo $datos['nombre']; ?>" placeholder="Nombre" required="required">

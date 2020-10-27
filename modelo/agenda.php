@@ -31,7 +31,7 @@
 
       $sql = "INSERT INTO `contactos`(`nombre`, `domicilio`, `telefono`, `comentarios`) VALUES ('$this->nombre', '$this->domicilio','$this->telefono','$this->comentarios')";
 
-       $db->query($sql) ? header("location: index.php?res=insertado"):header("location:index.php?res=error");
+       $db->query($sql) ? header("location:../index.php?res=insertado"):header("location:index.php?res=error");
 
      }
 
@@ -43,12 +43,13 @@
       $db->query($sql) ? header("location: index.php?res=editado"):header("location:index.php?res=error");
 
      }
+     
       public function delete(){
           $db = new Conexion();
 
           $sql= "DELETE FROM `contactos` WHERE `id` = $this->id";
 
-       $db->query($sql) ? header("location: index.php?res=eliminado"):header("location:index.php?res=error");
+       $db->query($sql); //? header("location: index.php?res=eliminado"):header("location:index.php?res=error");
       }
 
      public function selectId(){
@@ -71,5 +72,3 @@
              
   }
 
-
- ?>
