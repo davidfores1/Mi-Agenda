@@ -1,6 +1,6 @@
 <?php 
   
-   require 'Conexion.php';
+   require 'modelo.conexion.php';
   
   class Agenda{
       protected $nombre;

@@ -1,5 +1,5 @@
 <?php 
-include_once 'modelo/agenda.php';
+include_once 'modelo/modelo.agenda.php';
 
 $datos = array('nombre'=>'','domicilio'=>'','telefono'=>'','comentarios'=>'','id'=>'');
 include 'get.php';
@@ -25,7 +25,7 @@ $accion = 'insert';
 
  <body>
  	<header><a href="index.php"><h1>Mi Agenda</h1></a></header>
-     <form action="controlador/controlador.php" method="post">
+     <form action="controlador/controlador.agenda.php" method="post">
      	<div class="icon-user-plus"></div>
                 	
 	     <input type="text" name="nombre" value="<?php echo $datos['nombre']; ?>" placeholder="Nombre" required="required">

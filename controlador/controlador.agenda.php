@@ -1,5 +1,5 @@
 <?php 
-       require '../modelo/agenda.php';
+       require '../modelo/modelo.agenda.php';
 
 
    if(isset($_POST['submit'])){
