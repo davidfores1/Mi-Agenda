@@ -24,6 +24,8 @@
           echo '</tr>';
 
       }
-      
+      $up = new agendaControl();
+		  $up->selectUpdate();
+       
 	?>
 </table>	

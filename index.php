@@ -1,14 +1,10 @@
 <?php 
-include_once 'modelo/modelo.agenda.php';
+require_once 'modelo/modelo.agenda.php';
+require_once 'controlador/controlador.agenda.php';
 
 $datos = array('nombre'=>'','domicilio'=>'','telefono'=>'','comentarios'=>'','id'=>'');
-include 'get.php';
-$accion = 'insert';
-
- // include_once 'config/conexion.php';
-
- // $db = new Conexion();
-
+require_once 'get.php';
+ 
  ?>
 
  <!DOCTYPE html>
@@ -25,7 +21,8 @@ $accion = 'insert';
 
  <body>
  	<header><a href="index.php"><h1>Mi Agenda</h1></a></header>
-     <form action="controlador/controlador.agenda.php" method="post">
+     
+	 <form action="" method="post">
      	<div class="icon-user-plus"></div>
                 	
 	     <input type="text" name="nombre" value="<?php echo $datos['nombre']; ?>" placeholder="Nombre" required="required">
@@ -34,10 +31,17 @@ $accion = 'insert';
 	 	 <textarea name="comentarios" required="required" placeholder="Comentarios" scrolling="yes"><?php echo $datos['comentarios'];?></textarea>
 	 	
 	 	 <input type="hidden" name="id" value="<?php echo $datos['id'] ?>">
-         <input type="hidden" name="accion" value="<?php echo $accion ?>">
+         <input type="hidden" name="accion" value="<?php echo $accion?>">
 	 	 <input type="submit" name="submit" value="Enviar">
 	     </form>
 
+		 <?php 
+		 
+		  $registro = new agendaControl();
+		  $registro->registro();
+		 
+		 ?>
+		       
        <?php include 'vista/modulos/tabla.php'; ?>
        <footer> David717@hotmail.es</footer>
  	
