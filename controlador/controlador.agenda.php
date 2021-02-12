@@ -1,11 +1,10 @@
 <?php 
-      
+      require_once 'modelo/modelo.agenda.php';
        class agendaControl{
 
        
       public function registro(){
    	    if(isset($_POST['submit'])){ 
-        if($_POST['accion']=='insert'){
    	   	  $nom = $_POST['nombre'];
    	   	  $dom = $_POST['domicilio'];
    	   	  $tel = $_POST['telefono'];
@@ -14,7 +13,7 @@
        $agenda = new Agenda($nom,$dom,$tel,$com);
        $agenda->insert();
 
-         }
+
        }    
     }
 
