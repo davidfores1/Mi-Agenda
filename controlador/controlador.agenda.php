@@ -1,5 +1,5 @@
 <?php 
-      require_once 'modelo/modelo.agenda.php';
+      
        class agendaControl{
 
        
@@ -16,6 +16,17 @@
 
        }    
     }
+
+    public $editar;
+
+    public function editar(){
+
+       $id = $this->editar;
+       $agenda = Agenda::soloId($id);
+       $array = $agenda->selectId();
+       
+       echo json_encode($array);
+    }  
 
     public function selectUpdate(){
       
@@ -39,5 +50,10 @@
   }
 }
 
-   
+if(isset($_GET["editar"])){
 
+$edita = new agendaControl();   
+$edita-> editar = $_GET['editar'];
+$edita-> editar();
+
+}

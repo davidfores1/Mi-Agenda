@@ -4,6 +4,8 @@ require_once 'controlador/plantillaController.php';
 
 require_once 'controlador/controlador.agenda.php';
 
+require_once 'modelo/modelo.agenda.php';
+
 require_once 'get.php';
 
 
