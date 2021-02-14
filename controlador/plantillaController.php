@@ -7,6 +7,4 @@ public function vistaPlantilla(){
     include 'vista/plantilla.php';
 }
 
-
-
 }
