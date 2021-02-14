@@ -14,13 +14,15 @@ const clickEditar = function(evento) {
 
             const datos = res.data
 
-            console.log(datos.nombre);
             document.querySelector("#id").value = datos.id;
             document.querySelector("#nombre").value = datos.nombre;
             document.querySelector("#domicilio").value = datos.domicilio;
             document.querySelector("#telefono").value = datos.telefono;
             document.querySelector("#comentarios").value = datos.comentarios;
 
+            document.querySelector("#eliminar").setAttribute("id", "elimina")
+
+            document.querySelector("#enviar").style.backgroundColor = "#7dcf7d";
             document.querySelector("#enviar").setAttribute("name", "update");
             document.querySelector("#enviar").setAttribute("value", "Editar");
 
@@ -58,3 +60,12 @@ botons.forEach(boton => {
     //Agregar listener
     boton.addEventListener("click", clickEliminar);
 });
+
+
+
+
+function cancelar() {
+
+    window.location.assign("http://localhost/application/Mi-Agenda/index.php");
+
+}

@@ -57,7 +57,7 @@ footer {
 .icon-user-plus {
     font-size: 70px;
     text-align: center;
-    color: #0f6;
+    color: #469146;
     margin: 10px;
 }
 
@@ -69,4 +69,16 @@ footer {
 .icon-cross {
     font-size: 20px;
     color: #f00;
+}
+
+.enviar {
+    width: 80px;
+}
+
+.href {
+    color: white;
+}
+
+#eliminar {
+    display: none;
 }
