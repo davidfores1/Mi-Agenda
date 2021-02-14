@@ -16,6 +16,18 @@ class AgendAxios{
       echo json_encode($datos);
     } 
 
+
+    public $eliminar;
+
+    public function eliminar(){
+     echo'<script> alert("dasdasd")</script>';
+      $id = $_GET['eliminar'];
+      $agenda = Agenda::soloId($id);
+      $array = $agenda->delete();
+     
+    } 
+
+
 }
 
 if(isset($_GET["editar"])){
@@ -24,4 +36,12 @@ if(isset($_GET["editar"])){
     $edita-> editar = $_GET['editar'];
     $edita-> editar();
     
+}
+
+if(isset($_GET["eliminar"])){
+
+   $eliminar = new AgendAxios();   
+   $eliminar-> eliminar = $_GET['eliminar'];
+   $eliminar-> eliminar();
+  
 }

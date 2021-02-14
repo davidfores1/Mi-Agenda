@@ -65,7 +65,7 @@
           echo '<td>',$row['telefono'],'</td>';    
           echo '<td>',$row['comentarios'],'</td>';    
           echo '<td> <input type="button" class="btn btn-info editar" idEditar="'.$row["id"].'"/></td>';
-          echo '<td> <input type="button" class="btn btn-danger eliminar" idEditar="'.$row["id"].'"/></td>';
+          echo '<td> <input type="button" class="btn btn-danger eliminar" idEliminar="'.$row["id"].'"/></td>';
 
           echo '</tr>';
 

@@ -1,8 +1,9 @@
+//**************************** */ Editar********************************
 // Obtener referencia a botones
 // Recuerda: el punto . indica clases
 const botones = document.querySelectorAll(".editar");
 // Definir función y evitar definirla de manera anónima
-const cuandoSeHaceClick = function(evento) {
+const clickEditar = function(evento) {
         // Recuerda, this es el elemento
         //console.log("El texto que tiene es: ", this.getAttribute("idEditar"));
         var idEditar = this.getAttribute("idEditar")
@@ -30,5 +31,30 @@ const cuandoSeHaceClick = function(evento) {
     // botones es un arreglo así que lo recorremos
 botones.forEach(boton => {
     //Agregar listener
-    boton.addEventListener("click", cuandoSeHaceClick);
+    boton.addEventListener("click", clickEditar);
+});
+
+//**************************** */ Eliminar********************************
+
+const botons = document.querySelectorAll(".eliminar");
+// Definir función y evitar definirla de manera anónima
+const clickEliminar = function(evento) {
+        // Recuerda, this es el elemento
+        //console.log("El texto que tiene es: ", this.getAttribute("idEditar"));
+        var idEliminar = this.getAttribute("idEliminar")
+        console.log(idEliminar);
+        axios({
+            method: 'GET',
+            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?eliminar=${idEliminar}`
+        }).then(res => {
+
+            window.location.assign("http://localhost/application/Mi-Agenda/index.php")
+
+        }).catch(err => console.log(err))
+
+    }
+    // botones es un arreglo así que lo recorremos
+botons.forEach(boton => {
+    //Agregar listener
+    boton.addEventListener("click", clickEliminar);
 });
