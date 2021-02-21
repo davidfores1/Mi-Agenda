@@ -1,4 +1,3 @@
-
  <!DOCTYPE html>
 
  <html>
@@ -7,10 +6,10 @@
  	<meta charset="utf-8">
  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
  	<title>Mi agenda</title>
- 	<link rel="stylesheet" type="text/css" href="vista/css/styles.css">
+ 	
+	<link rel="stylesheet" type="text/css" href="vista/css/styles.css">
  	<link rel="stylesheet" type="text/css" href="vista/css/fonts.css">
- 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
+ 	
 	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	
   </head>
@@ -30,7 +29,7 @@
 	 	 <input type="hidden" id="id" name="id">
 		 
 	 	 <input type="submit" class="btn btn-primary enviar" id="enviar" name="create" value="Registrar"/>
-		 <button type="button" class="btn btn-secondary enviar" id="eliminar" name="cancelar" onclick="javascript:window.location.reload();">Cancelar</button>
+		 <button type="button" class="btn btn-secondary " id="cancelar" name="cancelar">Cancelar</button>
 	</form>
 
 		 <?php 
@@ -39,9 +38,8 @@
 		  $registro->registro();
 		  $registro->selectUpdate(); 
 		 
-		 ?>
-		       
-          <!--- Formulario-->
+		 ?>    
+          <!--- Tabla de datos-->
  <table>
 
 	<th>Nombre</th>
@@ -75,8 +73,6 @@
        
 	?>
 </table>
-
-       <!-- <footer> David717@hotmail.es</footer>-->
        
 	   <script src="vista/js/agenda.js"></script>
 	   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

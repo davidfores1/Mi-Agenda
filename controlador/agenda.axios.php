@@ -20,7 +20,7 @@ class AgendAxios{
     public $eliminar;
 
     public function eliminar(){
-     echo'<script> alert("dasdasd")</script>';
+    
       $id = $_GET['eliminar'];
       $agenda = Agenda::soloId($id);
       $array = $agenda->delete();

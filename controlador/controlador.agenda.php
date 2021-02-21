@@ -15,7 +15,8 @@
 
        $agenda = new Agenda($nom,$dom,$tel,$com);
        $agenda->insert();
-
+       
+       header("http://localhost/application/Mi-Agenda/index.php");
        }    
     }
 
@@ -34,6 +35,8 @@
   
           $agenda = new Agenda($nom,$dom,$tel,$com, $id);
           $agenda->update();
+
+          header("http://localhost/application/Mi-Agenda/index.php");
 
     }
   }

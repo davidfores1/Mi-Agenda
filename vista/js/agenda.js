@@ -1,71 +1,127 @@
-//**************************** */ Editar********************************
-// Obtener referencia a botones
-// Recuerda: el punto . indica clases
-const botones = document.querySelectorAll(".editar");
-// Definir función y evitar definirla de manera anónima
-const clickEditar = function(evento) {
-        // Recuerda, this es el elemento
-        //console.log("El texto que tiene es: ", this.getAttribute("idEditar"));
-        var idEditar = this.getAttribute("idEditar")
+class Agenda {
+
+    constructor() {
+
+        this.id = "";
+        this.nombre = "";
+        this.domicilio = "";
+        this.telefono = "";
+        this.comentarios = "";
+        this.estado = "0";
+        this.botonEliminar = "";
+        this.botonCancelar = "";
+
+        this.eventos();
+    }
+
+    eventos() {
+
+        this.clickListaEditar();
+        this.clickListaEliminar();
+        this.BotonCancelar();
+
+    }
+
+    clickListaEditar() {
+
+            this.botonEditar = document.querySelectorAll(".editar");
+
+            this.botonEditar.forEach(button => {
+                button.addEventListener("click", () => {
+                    this.botonEditar.forEach(button => {
+                        button.classList.remove("editar");
+                    })
+                    button.classList.toggle("editar");
+                    this.idEditar = document.querySelector(".editar").getAttribute("idEditar");
+                    this.clickEditar(this.idEditar);
+
+                })
+
+            })
+
+        }
+        //seleccionar para EDITAR
+    clickEditar() {
+
         axios({
+
             method: 'GET',
-            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?editar=${idEditar}`
+            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?editar=${this.idEditar}`
+
         }).then(res => {
 
-            const datos = res.data
+            if (this.estado == 0) {
+                document.querySelector("#cancelar").setAttribute("id", "elimina");
+                document.querySelector("#enviar").style.backgroundColor = "#7dcf7d";
+                document.querySelector("#enviar").setAttribute("name", "update");
+                document.querySelector("#enviar").setAttribute("value", "Editar");
+                this.estado = 1;
+            }
 
-            document.querySelector("#id").value = datos.id;
-            document.querySelector("#nombre").value = datos.nombre;
-            document.querySelector("#domicilio").value = datos.domicilio;
-            document.querySelector("#telefono").value = datos.telefono;
-            document.querySelector("#comentarios").value = datos.comentarios;
+            this.datos = res.data
 
-            document.querySelector("#eliminar").setAttribute("id", "elimina")
-
-            document.querySelector("#enviar").style.backgroundColor = "#7dcf7d";
-            document.querySelector("#enviar").setAttribute("name", "update");
-            document.querySelector("#enviar").setAttribute("value", "Editar");
+            this.id = document.querySelector("#id").value = this.datos.id;
+            this.nombre = document.querySelector("#nombre").value = this.datos.nombre;
+            this.telefono = document.querySelector("#telefono").value = this.datos.telefono;
+            this.domicilio = document.querySelector("#domicilio").value = this.datos.domicilio;
+            this.comentarios = document.querySelector("#comentarios").value = this.datos.comentarios;
 
 
         }).catch(err => console.log(err))
 
+
     }
-    // botones es un arreglo así que lo recorremos
-botones.forEach(boton => {
-    //Agregar listener
-    boton.addEventListener("click", clickEditar);
-});
 
-//**************************** */ Eliminar********************************
+    // seleccionar para ELIMINAR
+    clickListaEliminar() {
 
-const botons = document.querySelectorAll(".eliminar");
-// Definir función y evitar definirla de manera anónima
-const clickEliminar = function(evento) {
-        // Recuerda, this es el elemento
-        //console.log("El texto que tiene es: ", this.getAttribute("idEditar"));
-        var idEliminar = this.getAttribute("idEliminar")
-        console.log(idEliminar);
+        this.botonEliminar = document.querySelectorAll(".eliminar");
+
+        this.botonEliminar.forEach(button => {
+            button.addEventListener("click", () => {
+                this.botonEliminar.forEach(button => {
+                    button.classList.remove("eliminar");
+                })
+                button.classList.toggle("eliminar");
+                this.idEliminar = document.querySelector(".eliminar").getAttribute("idEliminar");
+                console.log(this.idEliminar);
+                this.clickEliminar(this.idEliminar);
+
+            })
+
+        })
+
+    }
+
+    clickEliminar() {
+
         axios({
+
             method: 'GET',
-            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?eliminar=${idEliminar}`
+            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?eliminar=${this.idEliminar}`
+
         }).then(res => {
 
             window.location.assign("http://localhost/application/Mi-Agenda/index.php")
 
         }).catch(err => console.log(err))
 
+
     }
-    // botones es un arreglo así que lo recorremos
-botons.forEach(boton => {
-    //Agregar listener
-    boton.addEventListener("click", clickEliminar);
-});
 
+    //Boton calcelar
+    BotonCancelar() {
 
+        this.botonCancelar = document.querySelector("#cancelar")
 
+        this.botonCancelar.addEventListener("click", function() {
 
-function cancelar() {
+            window.location.assign("http://localhost/application/Mi-Agenda/index.php");
 
-    window.location.assign("http://localhost/application/Mi-Agenda/index.php");
+        })
+
+    }
 
 }
+
+new Agenda();

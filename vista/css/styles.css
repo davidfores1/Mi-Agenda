@@ -30,8 +30,6 @@ textarea {
     margin: 20px auto;
 }
 
-textarea {}
-
 table {
     float: left;
     margin: 30px 30px;
@@ -79,6 +77,6 @@ footer {
     color: white;
 }
 
-#eliminar {
+#cancelar {
     display: none;
 }
