@@ -35,8 +35,8 @@
 		 <?php 
 		 
 		  $registro = new agendaControl();
-		  $registro->registro();
-		  $registro->selectUpdate(); 
+		  $registro->create();
+		  $registro->updateSelect(); 
 		 
 		 ?>    
           <!--- Tabla de datos-->
@@ -51,9 +51,7 @@
 
 	<?php  
       
-      $agenda = Agenda::ningundato();
-
-      $datos = $agenda->select();
+      $datos = agendaControl::view();
 
       while($row = $datos->fetch_array()){
           echo '<tr>';
@@ -68,9 +66,7 @@
           echo '</tr>';
 
       }
-          $up = new agendaControl();
-		  $up->selectUpdate();
-       
+          
 	?>
 </table>
        

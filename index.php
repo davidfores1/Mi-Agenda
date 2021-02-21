@@ -1,6 +1,6 @@
 <?php
 
-require_once 'controlador/plantillaController.php';
+require_once 'controlador/controlador.plantilla.php';
 
 require_once 'controlador/controlador.agenda.php';
 

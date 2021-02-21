@@ -7,6 +7,8 @@ class Agenda {
         this.domicilio = "";
         this.telefono = "";
         this.comentarios = "";
+        this.botonEditar = "";
+
         this.estado = "0";
         this.botonEliminar = "";
         this.botonCancelar = "";
@@ -46,7 +48,7 @@ class Agenda {
         axios({
 
             method: 'GET',
-            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?editar=${this.idEditar}`
+            url: `http://localhost/application/Mi-Agenda/controlador/controlador.agenda.axios.php/editar?editar=${this.idEditar}`
 
         }).then(res => {
 
@@ -98,7 +100,7 @@ class Agenda {
         axios({
 
             method: 'GET',
-            url: `http://localhost/application/Mi-Agenda/controlador/agenda.axios.php/editar?eliminar=${this.idEliminar}`
+            url: `http://localhost/application/Mi-Agenda/controlador/controlador.agenda.axios.php/editar?eliminar=${this.idEliminar}`
 
         }).then(res => {
 

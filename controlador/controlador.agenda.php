@@ -4,8 +4,15 @@
    
   class agendaControl{
 
-       
-      public function registro(){
+    public function view(){
+
+      $agenda = Agenda::ningundato();
+      $datos = $agenda->select(); 
+    
+      return $datos;
+    }       
+
+      public function create(){
 
    	    if(isset($_POST['create'])){ 
    	   	  $nom = $_POST['nombre'];
@@ -21,7 +28,7 @@
     }
 
       
-    public function selectUpdate(){
+    public function updateSelect(){
       
       if(isset($_POST['update'])){ 
   
