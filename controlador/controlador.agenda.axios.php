@@ -4,8 +4,7 @@ require '../modelo/modelo.agenda.php';
 
 class AgendAxios{
 
-    public $editar;
-
+ 
     public function editar(){
 
       $id = $_GET['editar'];
@@ -16,8 +15,6 @@ class AgendAxios{
       echo json_encode($datos);
     } 
 
-
-    public $eliminar;
 
     public function eliminar(){
     
@@ -33,7 +30,6 @@ class AgendAxios{
 if(isset($_GET["editar"])){
 
     $edita = new AgendAxios();   
-    $edita-> editar = $_GET['editar'];
     $edita-> editar();
     
 }
@@ -41,7 +37,6 @@ if(isset($_GET["editar"])){
 if(isset($_GET["eliminar"])){
 
    $eliminar = new AgendAxios();   
-   $eliminar-> eliminar = $_GET['eliminar'];
    $eliminar-> eliminar();
   
 }
